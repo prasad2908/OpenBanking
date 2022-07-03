@@ -26,7 +26,7 @@ public class AtmController {
 		
 		return ResponseEntity.ok(
 				atmService.getAtmService(url.orElseGet(() -> "https://api.lloydsbank.com/open-banking/v2.2/atms"), 
-						identification.orElseGet(() -> "LFFFBC11")));
+						identification.orElseGet(() -> null)));
 		
 		
 		
