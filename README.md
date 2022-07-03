@@ -1,7 +1,5 @@
 # OpenBanking
 This micro service will provide the ATM details based on the identification number
-http://localhost:8082/actuator/health
-http://localhost:8082/swagger-ui/index.html
 
 
 
