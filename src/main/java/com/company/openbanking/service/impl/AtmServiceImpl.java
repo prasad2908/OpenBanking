@@ -47,9 +47,13 @@ public class AtmServiceImpl implements IAtmService {
 		LOGGER.info("The ATM Details : " + atmRes);
 		
 		
-		  System.out.println( atmList.getData().stream().map(data ->
+		  /*System.out.println( atmList.getData().stream().map(data ->
 		  data.getBrand().stream().map( brand -> brand.getAtm().stream().filter(atm ->
 		  atm.getIdentification().equalsIgnoreCase(identification)).findFirst() ) ).collect(Collectors.toList()));
+		  */
+		  Optional<ATM> atmLst = atmList.getData().stream().flatMap(brl -> brl.getBrand().stream().flatMap(atmDet -> atmDet.getAtm().stream().filter(atm -> atm.getIdentification().equalsIgnoreCase(identification)))).findFirst();
+				  //collect(Collectors.toList());
+		 // List<Brand> brLst =  atmList.getData().stream().flatMap(brl -> brl.getBrand().stream() ).collect(Collectors.toList());
 		 
 		return atmRes.orElse(null);
 	}

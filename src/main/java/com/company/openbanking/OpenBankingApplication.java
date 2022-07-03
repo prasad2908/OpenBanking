@@ -22,4 +22,6 @@ public class OpenBankingApplication {
 	      return new Docket(DocumentationType.SWAGGER_2).select()
 	         .apis(RequestHandlerSelectors.basePackage("com.company.openbanking")).build();
 	   }
+	
+	
 }
